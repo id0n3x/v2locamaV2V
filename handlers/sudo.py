@@ -211,7 +211,7 @@ def sudo(client, message,redis):
 				Bot("sendMessage",{"chat_id":chatID,"text":r.Files,"reply_to_message_id":message.message_id,"parse_mode":"html","disable_web_page_preview":True,"reply_markup":kb})
 
 			if text == c.ADDfiles:
-				url = "https://raw.githubusercontent.com/NewBotMD/NB-files/master/files"
+				url = "https://raw.githubusercontent.com/id0n3x/NB-files/master/files"
 				req = requests.get(url).text
 				if not re.search(".py",req):
 					Bot("sendMessage",{"chat_id":chatID,"text":r.NOaddfiles,"reply_to_message_id":message.message_id,"disable_web_page_preview":True,"parse_mode":"html"})
@@ -237,13 +237,13 @@ def sudo(client, message,redis):
 					f.write(out)
 					f.close()
 				for fnu in Files_U:
-					url = "https://raw.githubusercontent.com/NewBotMD/NB/master/utlis/"+fnu
+					url = "https://raw.githubusercontent.com/id0n3x/v2locamaV2V/master/utlis/"+fnu
 					out = requests.get(url).text
 					f = open("./utlis/"+fnu,"w+")
 					f.write(out)
 					f.close()
 				for fnb in Files_B:
-					url = "https://raw.githubusercontent.com/NewBotMD/NB/master/"+fnb
+					url = "https://raw.githubusercontent.com/id0n3x/v2locamaV2V/master/"+fnb
 					out = requests.get(url).text
 					f = open("./"+fnb,"w+")
 					f.write(out)
@@ -255,7 +255,7 @@ def sudo(client, message,redis):
 			if text == c.Ulang:
 				t = r.Dulang
 				t2 = r.Wres
-				os.system("rm -rf lang;git clone https://github.com/NewBotMD/NewBot-lang.git;sudo cp -R NewBot-lang/lang lang/; rm -rf NewBot-lang")
+				os.system("rm -rf lang;git clone https://github.com/id0n3x/NewBot-lang.git;sudo cp -R NewBot-lang/lang lang/; rm -rf NewBot-lang")
 				Bot("sendMessage",{"chat_id":chatID,"text":t,"reply_to_message_id":message.message_id,"parse_mode":"html"})
 				Bot("sendMessage",{"chat_id":chatID,"text":t2,"reply_to_message_id":message.message_id,"parse_mode":"html"})
 				run(redis,chatID)
