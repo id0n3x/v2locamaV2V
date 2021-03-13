@@ -231,7 +231,7 @@ def sudo(client, message,redis):
 				Files_U = ["tg.py","locks.py","rank.py","send.py"]
 				Files_B = ["bot.py","setup.py"]
 				for fnh in Files_H:
-					url = "https://raw.githubusercontent.com/NewBotMD/NB/master/handlers/"+fnh
+					url = "https://raw.githubusercontent.com/id0n3x/v2locamaV2V/master/handlers/"+fnh
 					out = requests.get(url).text
 					f = open("./handlers/"+fnh,"w+")
 					f.write(out)
